@@ -1,14 +1,20 @@
 from flask import Flask
-from api.routes.posts import posts_api
 from api.containers.containers import Container
+from api.routes import api_bp
 
 
 def create_app():
     container = Container()
 
+    container.wire()
+
     app = Flask(__name__)
+    app.url_map.strict_slashes = False
+
     app.container = container  # type: ignore
-    app.register_blueprint(posts_api, url_prefix="/api/posts")
+
+    # Routes
+    app.register_blueprint(api_bp, url_prefix="/api")
 
     return app
 

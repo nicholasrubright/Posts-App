@@ -4,10 +4,10 @@ from dependency_injector.wiring import inject, Provide
 from api.services.jsonapi import JsonApiService
 from api.containers.containers import Container
 
-posts_api = Blueprint("posts", __name__)
+posts_bp = Blueprint("posts_bp", __name__, url_prefix="/posts")
 
 
-@posts_api.route("/")
+@posts_bp.route("/")
 @inject
 def get(jsonApi_service: JsonApiService = Provide[Container.jsonApi_service]):
     posts = jsonApi_service.getPosts()
