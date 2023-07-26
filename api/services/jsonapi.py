@@ -31,4 +31,4 @@ class JsonApiService:
             print(err.messages)
             return []
 
-        return results
+        return self.postSchema.dump(results, many=True)  # type: ignore
