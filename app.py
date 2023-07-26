@@ -5,7 +5,7 @@ from api.routes.posts import posts_api
 def create_app():
     app = Flask(__name__)
 
-    app.register_blueprint(posts_api, url_prefix="/api")
+    app.register_blueprint(posts_api, url_prefix="/api/posts")
 
     return app
 
