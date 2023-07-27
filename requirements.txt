@@ -3,3 +3,4 @@ flask
 flask-marshmallow
 typing_extensions
 marshmallow_generic
+Flask-SQLAlchemy

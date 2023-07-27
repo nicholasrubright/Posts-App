@@ -1,6 +1,7 @@
 from flask import Flask
 from api.containers.containers import Container
 from api.routes import api_bp
+from config import Config
 
 
 def create_app():
@@ -10,6 +11,7 @@ def create_app():
 
     app = Flask(__name__)
     app.url_map.strict_slashes = False
+    app.config.from_object(Config)
 
     app.container = container  # type: ignore
 

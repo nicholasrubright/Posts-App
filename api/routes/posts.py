@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from flask import Blueprint, jsonify
+from flask import Blueprint
 from dependency_injector.wiring import inject, Provide
 from api.services.jsonapi import JsonApiService
 from api.containers.containers import Container
